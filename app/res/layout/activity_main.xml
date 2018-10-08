@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/realtabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:visibility="visible" />
+
+        <com.ydong.newequip.ui.FragmentTabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_background">
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0" />
+
+        </com.ydong.newequip.ui.FragmentTabHost>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/guideLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/guideViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/nextPage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/cancel"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/msgTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="38dp"
+        android:layout_marginRight="17dp"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:background="@mipmap/icon_bubble">
+
+            <TextView
+                android:id="@+id/msgNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                tools:text="28" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="@dimen/mar_200"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@color/window_bg"
+        android:paddingTop="@dimen/mar_10"
+        android:text="二维码"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/mar_200"
+        android:layout_height="@dimen/mar_1"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+
+    <TextView
+
+        android:textColor="@color/black"
+        android:id="@+id/textView3"
+        android:layout_width="@dimen/mar_200"
+        android:layout_height="@dimen/mar_35"
+        android:gravity="center"
+        android:text="A103"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintBottom_toTopOf="@+id/iv_qrcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_qrcode"
+        android:layout_width="@dimen/mar_200"
+        android:layout_height="@dimen/mar_200"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/activity_txt"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="@dimen/mar_200"
+        android:layout_height="@dimen/mar_35"
+        android:layout_marginBottom="8dp"
+        android:text="上海能电"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_qrcode"/>
+
+    <TextView
+        android:id="@+id/text_cancel"
+        android:layout_width="wrap_content"
+        android:paddingLeft="@dimen/mar_10"
+        android:paddingRight="@dimen/mar_10"
+        android:paddingTop="@dimen/mar_5"
+        android:paddingBottom="@dimen/mar_5"
+        android:layout_marginBottom="@dimen/mar_20"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/mar_15"
+        android:text="取消"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/white"
+        android:background="@color/md_material_blue_600"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
+</android.support.constraint.ConstraintLayout>

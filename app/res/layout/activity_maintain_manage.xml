@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/gray2"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_45"
+        android:background="@color/theme_color"
+        android:elevation="0dp"
+        android:gravity="left"
+        android:minHeight="@dimen/mar_45"
+        app:navigationIcon="@mipmap/white_back"
+        app:title="">
+
+        <TextView
+            android:id="@+id/mTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="维修工单选择"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/text_all_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_35"
+        android:background="@color/gray1"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/mar_10"
+        android:text="请选择工单状态"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14"/>
+
+    <LinearLayout
+        android:id="@+id/tobe_received"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_42"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="待接收"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"/>
+
+        <TextView
+            android:id="@+id/tv_num1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mar_5"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/gray6"/>
+
+        <ImageView
+            android:layout_width="@dimen/mar_15"
+            android:layout_height="@dimen/mar_15"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/mar_10"
+            android:src="@mipmap/go"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_1"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:background="@color/gray4"/>
+
+    <LinearLayout
+        android:id="@+id/wait_present"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_42"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="待到场"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"/>
+
+        <TextView
+            android:id="@+id/tv_num2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mar_5"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/gray6"/>
+
+        <ImageView
+            android:layout_width="@dimen/mar_15"
+            android:layout_height="@dimen/mar_15"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/mar_10"
+            android:src="@mipmap/go"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_1"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:background="@color/gray4"/>
+
+    <LinearLayout
+        android:id="@+id/tobe_repaired"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_42"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="待维修"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"/>
+
+        <TextView
+            android:id="@+id/tv_num3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mar_5"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/gray6"/>
+
+        <ImageView
+            android:layout_width="@dimen/mar_15"
+            android:layout_height="@dimen/mar_15"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/mar_10"
+            android:src="@mipmap/go"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_1"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:background="@color/gray4"/>
+
+    <LinearLayout
+        android:id="@+id/ready_repaired"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_42"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="已维修"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"/>
+
+        <TextView
+            android:id="@+id/tv_num4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mar_5"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/gray6"/>
+
+        <ImageView
+            android:layout_width="@dimen/mar_15"
+            android:layout_height="@dimen/mar_15"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/mar_10"
+            android:src="@mipmap/go"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_1"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:background="@color/gray4"/>
+
+    <LinearLayout
+        android:id="@+id/table_all"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_42"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="工单管理"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16"/>
+
+        <TextView
+            android:id="@+id/tv_num5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/mar_5"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/gray6"/>
+
+        <ImageView
+            android:layout_width="@dimen/mar_15"
+            android:layout_height="@dimen/mar_15"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/mar_10"
+            android:src="@mipmap/go"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_1"
+        android:layout_marginLeft="@dimen/mar_10"
+        android:background="@color/gray4"/>
+
+
+</LinearLayout>

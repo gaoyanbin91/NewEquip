@@ -1,0 +1,542 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray2"
+                android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mar_45"
+        android:background="@color/theme_color"
+        android:elevation="0dp"
+        android:gravity="left"
+        android:minHeight="@dimen/mar_45"
+        app:navigationIcon="@mipmap/white_back"
+        app:title="">
+
+        <TextView
+            android:id="@+id/mTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/even_add"
+            android:textColor="@color/activity_txt"
+            android:textSize="@dimen/text_16"/>
+
+
+        <TextView
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="@color/activity_txt"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/toolbar"
+        android:background="@color/gray2"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/view_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/toolbar"
+                    android:paddingLeft="@dimen/mar_15">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="类 型："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_type"
+                        android:layout_marginLeft="@dimen/mar_100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/mar_20"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbt_important"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/cart_check_selector"
+                            android:drawablePadding="@dimen/heihgt_8dp"
+                            android:paddingLeft="@dimen/heihgt_20dp"
+                            android:tag="1"
+                            android:text="正常"
+                            android:checked="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_16"/>
+
+                        <RadioButton
+                            android:id="@+id/rbt_commonly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/cart_check_selector"
+                            android:drawablePadding="@dimen/heihgt_8dp"
+                            android:paddingLeft="@dimen/heihgt_20dp"
+                            android:tag="0"
+                            android:text="外报"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_16"/>
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txv_contacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="设 备："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <TextView
+                        android:id="@+id/text_model_name"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_below="@id/ll_part"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/iv_qrcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/mar_20"
+                        android:src="@mipmap/icon_search_gray"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_add_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="报修人："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <TextView
+                        android:id="@+id/text_person_name"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_below="@id/ll_part"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </TextView>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_add_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="电 话："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <TextView
+                        android:id="@+id/text_person_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_below="@id/ll_part"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </TextView>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="型 号："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <EditText
+                        android:id="@+id/edt_model"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </EditText>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="专 业："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_major"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tex_major"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/mar_45"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/mar_10"
+                            android:text="-- 请选择专业 --"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textSize="@dimen/text_16">
+                        </TextView>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/mar_20"
+                        android:src="@mipmap/btn_nabla"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="区 域："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <EditText
+                        android:id="@+id/edt_phone_num"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入所属区域"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </EditText>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="位 置："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </TextView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_45"
+                    android:layout_below="@id/view_level"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="级 别："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <TextView
+                        android:id="@+id/text_level"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/mar_45"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:maxLength="30"
+                        android:paddingLeft="@dimen/mar_10"
+                        android:text="A"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="@dimen/text_16">
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/mar_20"
+                        android:src="@mipmap/btn_nabla"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray2"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_100"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/edt_part"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/mar_45"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/mar_15"
+                        android:text="描 述："
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp">
+
+                        <EditText
+                            android:id="@+id/edt_part_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="top"
+                            android:lineSpacingExtra="1.5dp"
+                            android:lines="5"
+                            android:maxLength="100"
+                            android:paddingBottom="@dimen/heihgt_8dp"
+                            android:paddingLeft="@dimen/heihgt_20dp"
+                            android:paddingRight="@dimen/heihgt_10dp"
+                            android:paddingTop="@dimen/heihgt_8dp"
+                            android:text=""
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray"
+                            android:textSize="@dimen/text_16">
+                        </EditText>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/hs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_imgv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/heihgt_8dp"
+                        android:paddingLeft="@dimen/heihgt_20dp"
+                        android:paddingTop="@dimen/heihgt_8dp">
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/mar_2">
+
+                <TextView
+                    android:id="@+id/txv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/mar_40"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/heihgt_8dp"
+                    android:background="@drawable/bg_btn_face_enable"
+                    android:enabled="true"
+                    android:gravity="center"
+                    android:text="@string/feedback_submit"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

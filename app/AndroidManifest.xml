@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ydong.newequip">
+
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".NewEquipApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/NewEquip">
+
+        <!-- 7.0以上配置文件存储位置 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.ydong.newequip.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".activity.MainActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DeviceManageActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            />
+        <activity android:name=".activity.DeviceManageDetailAty"
+            />
+        <activity android:name=".activity.MaintainManageActivity"
+            />
+        <activity
+            android:name=".activity.MaintainListAty"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            />
+        <activity
+            android:name=".activity.EvenAddActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            />
+        <activity
+            android:name=".view.photo.PhotoPickerActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MeterManageActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.RevisePsdActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.InspectorListActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CaptureActivity"
+                  android:theme="@style/NewEquip"/>
+
+    </application>
+
+</manifest>
